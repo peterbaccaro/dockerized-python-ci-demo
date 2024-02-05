@@ -31,8 +31,8 @@ jobs:
         
   docker-unit-tests:
     - name: Build Docker Image
-      run: |        docker build --build-arg GIT_COMMIT=${GITHUB_SHA::8} -t image-test .
-
+      run: |
+        docker build --build-arg GIT_COMMIT=${GITHUB_SHA::8} -t image-test .
       shell: bash  
   
   code-quality-checks:
