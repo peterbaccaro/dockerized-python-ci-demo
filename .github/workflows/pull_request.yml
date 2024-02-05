@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Build Docker Image
         run: |
-          docker build --build-arg GIT_COMMIT=${GITHUB_SHA::8} -t image-test .
+          docker build --build-arg GIT_COMMIT=${GITHUB_SHA::8} -t image-test . -f Dockerfile
         shell: bash  
   
   code-quality-checks:
