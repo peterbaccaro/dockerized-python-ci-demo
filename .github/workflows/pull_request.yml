@@ -32,9 +32,12 @@ jobs:
   docker-unit-tests:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        
       - name: Build Docker Image
         run: |
-          docker build -t image-test . -f Dockerfile
+          docker build -t image-test .
         shell: bash  
   
   code-quality-checks:
