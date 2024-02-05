@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "dls-utils"
+version = "0.1.0"
+description = "Daylight saving Utilities"
+authors = ["Peter Baccaro"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0.post1"
+httpx = "^0.26.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.0.0"
+
+[tool.poetry.group.code-quality.dependencies]
+black = "^23.3.0"
+flake8 = "^7.0.0"
+isort = "^5.12.0"
+
+[tool.black]
+line-length = 90
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
