@@ -1,0 +1,11 @@
+[flake8]
+statistics = True
+
+max-line-length = 90
+# Set the maximum allowed McCabe complexity value for a block of code.
+max-complexity = 10
+
+exclude =
+    .git,
+    __pycache__,
+    .venv
