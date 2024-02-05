@@ -30,10 +30,12 @@ jobs:
         run: poetry run pytest --cov-report term --cov
         
   docker-unit-tests:
-    - name: Build Docker Image
-      run: |
-        docker build --build-arg GIT_COMMIT=${GITHUB_SHA::8} -t image-test .
-      shell: bash  
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Image
+        run: |
+          docker build --build-arg GIT_COMMIT=${GITHUB_SHA::8} -t image-test .
+        shell: bash  
   
   code-quality-checks:
     runs-on: ubuntu-latest
