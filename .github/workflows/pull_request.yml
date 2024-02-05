@@ -1,5 +1,5 @@
 ---
-name: Pull request
+name: Pull Request
 
 on:
   pull_request:
@@ -29,31 +29,31 @@ jobs:
       - name: Run Unit Tests
         run: poetry run pytest --cov-report term --cov
         
-    code-quality-checks:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Setup Python 3.11
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.11'
+  code-quality-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-        - name: Checkout Code
-          uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-        - name: Install Poetry
-          run: |
-            python -m pip install --upgrade pip
-            python -m pip install poetry
+      - name: Install Poetry
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install poetry
 
-        - name: Install Project Dependencies
-          run: |
-            poetry install --only main, code-quality
+      - name: Install Project Dependencies
+        run: |
+          poetry install --only main, code-quality
 
-        - name: Formatter Check
-          run: poetry run black --check .
+      - name: Formatter Check
+        run: poetry run black --check .
 
-        - name: Import Order Check
-          run: poetry run isort --check-only --diff .
+      - name: Import Order Check
+        run: poetry run isort --check-only --diff .
 
-        - name: Linter Check
-          run: poetry run flake8 .  
+      - name: Linter Check
+        run: poetry run flake8 .  
