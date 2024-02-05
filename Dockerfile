@@ -10,8 +10,8 @@ RUN python -m pip install --upgrade pip && \
     python -m pip install poetry && \
     poetry install
 
-COPY src ./src
-COPY tests ./tests
+COPY ./src ./src
+COPY ./tests ./tests
 
 RUN poetry run pytest . > test_results.txt
 
