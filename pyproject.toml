@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "dls-utils"
 version = "0.1.0"
-description = "Daylight saving Utilities"
+description = "Calculator API"
 authors = ["Peter Baccaro"]
 readme = "README.md"
 
@@ -13,6 +13,7 @@ httpx = "^0.26.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.0.0"
+pytest-cov = "^4.0.0"
 
 [tool.poetry.group.code-quality.dependencies]
 black = "^23.3.0"
