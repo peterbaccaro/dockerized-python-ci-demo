@@ -38,7 +38,7 @@ jobs:
         
       - name: Build Docker Image
         run: |
-          docker build --target test-results --output type=local,dest=out .
+          docker build --target test
         shell: bash
 
       - name: Run Tests and Display Results
