@@ -37,7 +37,7 @@ jobs:
         
       - name: Build Docker Image
         run: |
-          docker build --target test -t image-test .
+          docker build --target test-results -t image-test .
         shell: bash  
   
   code-quality-checks:
