@@ -38,12 +38,7 @@ jobs:
         
       - name: Build Docker Image
         run: |
-          docker build --target test -t test
-        shell: bash
-
-      - name: Run Tests and Display Results
-        run: |
-          docker run --rm test cat /opt/calculator/test_results.txt
+          docker build --target test cat /opt/calculator/test_results.txt
         shell: bash
 
   code-quality-checks:
