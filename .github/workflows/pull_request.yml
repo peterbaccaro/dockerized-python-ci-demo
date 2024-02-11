@@ -27,8 +27,25 @@ jobs:
           poetry install --only main,test
 
       - name: Run Unit Tests
-        run: poetry run pytest --cov-report term --cov
+        run: |
+          poetry run pytest --cov-report term --cov
         
+  docker-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        
+      - name: Build Docker Test Image
+        run: |
+          docker build --target test -o type=local,dest=out .
+        shell: bash
+
+      - name: Display Test Results
+        run: |
+          docker run --rm $(docker build -q --target test .) cat /opt/calculator/test_results.txt
+        shell: bash
+
   code-quality-checks:
     runs-on: ubuntu-latest
     steps:
