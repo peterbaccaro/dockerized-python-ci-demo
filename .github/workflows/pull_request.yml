@@ -27,7 +27,8 @@ jobs:
           poetry install --only main,test
 
       - name: Run Unit Tests
-        run: poetry run pytest --cov-report term --cov
+        run: |
+          poetry run pytest --cov-report term --cov
         
   docker-unit-tests:
     runs-on: ubuntu-latest
@@ -38,8 +39,13 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build --target test-results --output type=local,dest=out .
-        shell: bash  
-  
+        shell: bash
+
+      - name: Build Docker Image
+        run: |
+          docker run --rm test-results cat /opt/calculator/test_results.txt
+        shell: bash
+
   code-quality-checks:
     runs-on: ubuntu-latest
     steps:
