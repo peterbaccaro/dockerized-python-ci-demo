@@ -41,9 +41,9 @@ jobs:
           docker build --target test-results --output type=local,dest=out .
         shell: bash
 
-      - name: Build Docker Image
+      - name: Run Tests and Display Results
         run: |
-          docker run --rm test-results cat /opt/calculator/test_results.txt
+          docker run --rm test cat /opt/calculator/test_results.txt
         shell: bash
 
   code-quality-checks:
