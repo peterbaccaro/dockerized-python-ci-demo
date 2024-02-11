@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.109.0"
-uvicorn = "^0.27.0.post1"
+uvicorn = "^0.27.0-post.0"
 httpx = "^0.26.0"
 
 [tool.poetry.group.test.dependencies]
@@ -16,7 +16,7 @@ pytest = "^8.0.0"
 pytest-cov = "^4.0.0"
 
 [tool.poetry.group.code-quality.dependencies]
-black = "^23.3.0"
+black = "^24.0.0"
 flake8 = "^7.0.0"
 isort = "^5.12.0"
 

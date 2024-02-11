@@ -1,5 +1,5 @@
 # STAGE 1: Build
-FROM python:3.11-slim AS build
+FROM python:3.12-slim AS build
 
 WORKDIR /opt/calculator
 
@@ -23,7 +23,7 @@ RUN poetry run pytest . > test_results.txt
 
 
 #STAGE 3: Production image
-FROM python:3.11-slim 
+FROM python:3.12-slim
 
 WORKDIR /opt/calculator
 
