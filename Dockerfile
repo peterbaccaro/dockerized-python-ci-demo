@@ -22,7 +22,6 @@ RUN poetry install --only test && \
 
 #STAGE 3: Production Image
 FROM python:3.12-slim
->>>>>>> ba1e119 (Update Dockerfile)
 
 WORKDIR /opt/calculator
 
