@@ -37,7 +37,7 @@ jobs:
         
       - name: Build Docker Image
         run: |
-          docker build --target test-results -t image-test . --output type=local,dest=out .
+          docker build --target test-results --output type=local,dest=out .
         shell: bash  
   
   code-quality-checks:
