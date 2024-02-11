@@ -36,12 +36,12 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
         
-      - name: Build Docker Image
+      - name: Build Docker Test Image
         run: |
           docker build --target test -o type=local,dest=out .
         shell: bash
 
-      - name: Build Docker Image
+      - name: Display Test Results
         run: |
           docker run --rm $(docker build -q --target test .) cat /opt/calculator/test_results.txt
         shell: bash
