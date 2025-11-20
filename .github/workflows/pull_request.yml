@@ -15,7 +15,7 @@ jobs:
           python-version: '3.11'
 
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Poetry
         run: |
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         
       - name: Build Docker Test Image
         run: |
@@ -55,7 +55,7 @@ jobs:
           python-version: '3.11'
 
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Poetry
         run: |
