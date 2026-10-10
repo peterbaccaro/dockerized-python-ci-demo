@@ -16,7 +16,7 @@ pytest = "^8.0.0"
 pytest-cov = "^6.0.0"
 
 [tool.poetry.group.code-quality.dependencies]
-black = "^24.0.0"
+black = "^26.0.0"
 flake8 = "^7.0.0"
 isort = "^5.12.0"
 
